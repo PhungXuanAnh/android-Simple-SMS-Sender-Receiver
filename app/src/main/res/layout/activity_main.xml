@@ -10,10 +10,30 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text = "Send SMS" />
-    
+
+    <EditText
+        android:id="@+id/editTextPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="+84349625123"
+        />
+
+    <EditText
+        android:id="@+id/editTextYourMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Enter your message here"
+        />
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="Incomming message here"
+        />
     
 </LinearLayout>

@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import android.content.BroadcastReceiver;
@@ -19,6 +20,8 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
     Button btnSendSMS;
+    EditText editTextPhoneNumber;
+    EditText editTextYourMessage;
     IntentFilter intentFilter;
 
     private BroadcastReceiver intentReceiver = new BroadcastReceiver() {
@@ -36,12 +39,15 @@ public class MainActivity extends Activity {
         intentFilter = new IntentFilter();
         intentFilter.addAction("SMS_RECEIVED_ACTION");
 
+        editTextPhoneNumber = (EditText) findViewById(R.id.editTextPhoneNumber);
+        editTextYourMessage = (EditText) findViewById(R.id.editTextYourMessage);
+
         btnSendSMS = (Button) findViewById(R.id.btnSendSMS);
         btnSendSMS.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
             {
                 // REPLACE THESE VALUES
-                sendSMS("Recipient Number Here", "Your Message Here");
+                sendSMS(editTextPhoneNumber.getText().toString(), editTextYourMessage.getText().toString());
                 /*
                 Intent i = new Intent(android.content.Intent.ACTION_VIEW);
                 i.putExtra("address", "Recipient Number Here");
